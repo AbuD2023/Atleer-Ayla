@@ -3,6 +3,438 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أتيلير إيلا - Atelier Ella</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #8B7355;
+            --secondary: #D4B996;
+            --accent: #C19A6B;
+            --dark: #3A2C1E;
+            --light: #F8F4F0;
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            background: var(--light);
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            border: 2px solid var(--gold);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            padding: 40px 25px 30px;
+            color: white;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--gold), var(--secondary), var(--gold));
+        }
+
+        .logo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 4px solid var(--gold);
+            margin: 0 auto 20px;
+            background: white;
+            padding: 8px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .brand-name {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+        }
+
+        .brand-subtitle {
+            font-size: 18px;
+            font-weight: 300;
+            margin-bottom: 15px;
+            opacity: 0.9;
+            color: var(--light);
+        }
+
+        .description {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 15px;
+            margin-top: 15px;
+            font-size: 16px;
+            line-height: 1.7;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(transparent, var(--light));
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .content {
+            padding: 35px 25px;
+        }
+
+        .welcome-section {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--secondary);
+        }
+
+        .welcome-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .welcome-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+
+        .welcome-text {
+            font-size: 17px;
+            color: var(--dark);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 18px;
+            display: block;
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(139, 115, 85, 0.1);
+            border-radius: 10px;
+            border-right: 3px solid var(--gold);
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin: 30px 0;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 17px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .social-btn:hover::before {
+            left: 100%;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-btn i {
+            margin-left: 12px;
+            font-size: 22px;
+        }
+
+        .facebook {
+            background: linear-gradient(135deg, #1877f2, #0d5cb6);
+        }
+
+        .instagram {
+            background: linear-gradient(135deg, #e4405f, #c13584, #833AB4);
+        }
+
+        .contact-info {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 20px;
+            margin-top: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--secondary);
+        }
+
+        .contact-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 15px 0;
+            font-size: 16px;
+            color: var(--dark);
+        }
+
+        .contact-item i {
+            color: var(--primary);
+            font-size: 18px;
+            width: 24px;
+        }
+
+        .footer {
+            background: var(--dark);
+            color: var(--light);
+            padding: 20px;
+            font-size: 14px;
+            border-top: 2px solid var(--gold);
+        }
+
+        .copyright {
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        /* تصميم متجاوب */
+        @media (max-width: 480px) {
+            .container {
+                margin: 10px;
+                border-radius: 20px;
+            }
+            
+            .logo {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .brand-name {
+                font-size: 28px;
+            }
+            
+            .brand-subtitle {
+                font-size: 16px;
+            }
+            
+            .content {
+                padding: 25px 20px;
+            }
+            
+            .welcome-section {
+                padding: 20px;
+            }
+        }
+
+        /* تأثيرات إضافية */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container fade-in">
+        <div class="header">
+            <div class="logo pulse">
+                <img src="https://scontent-hbe1-2.xx.fbcdn.net/v/t39.30808-6/514262832_122170428140563077_237405615898982122_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=J-LEZmrLiqgQ7kNvwHCy-pf&_nc_oc=Adk8y2oySo3U-J3XsfiSp7_Kbs9wrRjJWKtjdsyDEc9ae6CvUoJTvpPhabNPR0pfiGI&_nc_zt=23&_nc_ht=scontent-hbe1-2.xx&_nc_gid=-KLksGCr0_fA1zLdD2IZHw&oh=00_AffoZUxRuWMuDkeduvAwqeCWAoAWi3D09zAk5kgj8HjwgQ&oe=68F81DD0" 
+                     alt="شعار أتيلير إيلا">
+            </div>
+            <h1 class="brand-name">ATELIER ELLA</h1>
+            <p class="brand-subtitle">أتيلير إيلا</p>
+            <div class="description">
+                نحن أتيليه فساتين زفاف فاخرة وارد تركيا والسعودية. نسعى أن تكونوا مميزات في إطلالاتكن ونسعى لتميزكن وراحتكن بتوفير كل ما تحتاجي إليه عزيزتي.
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="https://scontent-hbe1-1.xx.fbcdn.net/v/t39.30808-6/539271045_122176275812563077_4683930835478590453_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=heQDDhCrIDYQ7kNvwH_7ULc&_nc_oc=AdkbQiF3NWJVxKO-u0Q2Tom9M-32bB5IMytMqamZBsD2jO69A_jU34uKir6XyLgCHh8&_nc_zt=23&_nc_ht=scontent-hbe1-1.xx&_nc_gid=RqdNRYinnl2M4SJtD8jb9w&oh=00_AffndeUZ3ESGuNi6Er5fJoVKmrZXCp3erJFKjY-lS9vv1A&oe=68F83EFF" 
+                 alt="صورة تعريفية عن أتيلير إيلا">
+        </div>
+
+        <div class="content">
+            <div class="welcome-section">
+                <h2 class="welcome-title">مرحباً بكم في أتيلير إيلا</h2>
+                <p class="welcome-text">
+                    تابعونا على منصات التواصل الاجتماعي لمعرفة آخر العروض والمجموعات الحصرية من فساتين الزفاف الفاخرة.
+                </p>
+                <span class="highlight">
+                    إذا كنتِ تبحثين عن الأناقة والرقي والتميز كوني مع إيلا
+                </span>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61566892313372" class="social-btn facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    تابعنا على فيسبوك
+                </a>
+                
+                <a href="https://www.instagram.com/ayah86123/" class="social-btn instagram">
+                    <i class="fab fa-instagram"></i>
+                    تابعنا على إنستقرام
+                </a>
+            </div>
+
+            <div class="contact-info">
+                <h3 class="contact-title">
+                    <i class="fas fa-headset"></i>
+                    معلومات التواصل
+                </h3>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+967 780 415 440</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>ساعات العمل: 9 صباحاً - 6 مساءً</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p class="copyright">جميع الحقوق محفوظة © 2025 أتيلير إيلا - Atelier Ella</p>
+        </div>
+    </div>
+
+    <script>
+        // إضافة تأثيرات تفاعلية بسيطة
+        document.addEventListener('DOMContentLoaded', function() {
+            const socialBtns = document.querySelectorAll('.social-btn');
+            
+            socialBtns.forEach(btn => {
+                btn.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.02)';
+                });
+                
+                btn.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>اتلير ايلا - تواصل معنا</title>
     <style>
         * {
@@ -217,4 +649,4 @@
         </div>
     </div>
 </body>
-</html>
+</html> -->
