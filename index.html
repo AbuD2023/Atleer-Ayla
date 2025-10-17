@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجرك - تواصل معنا</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            padding: 30px 20px;
+            color: white;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin: 0 auto 15px;
+            background: white;
+            padding: 5px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .store-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .store-description {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .content {
+            padding: 30px 20px;
+        }
+
+        .welcome-text {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-btn i {
+            margin-left: 10px;
+            font-size: 20px;
+        }
+
+        .facebook {
+            background: linear-gradient(135deg, #1877f2, #0d5cb6);
+        }
+
+        .instagram {
+            background: linear-gradient(135deg, #e4405f, #c13584);
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            color: #6c757d;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            font-size: 12px;
+        }
+
+        /* رموز الوسائط الاجتماعية */
+        .social-icons {
+            font-style: normal;
+        }
+
+        /* تصميم متجاوب */
+        @media (max-width: 480px) {
+            .container {
+                margin: 10px;
+            }
+            
+            .logo {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .store-name {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="https://scontent-hbe1-2.xx.fbcdn.net/v/t39.30808-6/514262832_122170428140563077_237405615898982122_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=J-LEZmrLiqgQ7kNvwHCy-pf&_nc_oc=Adk8y2oySo3U-J3XsfiSp7_Kbs9wrRjJWKtjdsyDEc9ae6CvUoJTvpPhabNPR0pfiGI&_nc_zt=23&_nc_ht=scontent-hbe1-2.xx&_nc_gid=-KLksGCr0_fA1zLdD2IZHw&oh=00_AffoZUxRuWMuDkeduvAwqeCWAoAWi3D09zAk5kgj8HjwgQ&oe=68F81DD0" 
+                     alt="شعار المتجر" 
+                     onerror="this.src='https://via.placeholder.com/120/667eea/white?text=LOGO'">
+            </div>
+            <h1 class="store-name">اسم متجرك</h1>
+            <p class="store-description">وصف مختصر عن متجرك</p>
+        </div>
+
+        <div class="hero-image">
+            <img src="https://scontent-hbe1-1.xx.fbcdn.net/v/t39.30808-6/539271045_122176275812563077_4683930835478590453_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=heQDDhCrIDYQ7kNvwH_7ULc&_nc_oc=AdkbQiF3NWJVxKO-u0Q2Tom9M-32bB5IMytMqamZBsD2jO69A_jU34uKir6XyLgCHh8&_nc_zt=23&_nc_ht=scontent-hbe1-1.xx&_nc_gid=RqdNRYinnl2M4SJtD8jb9w&oh=00_AffndeUZ3ESGuNi6Er5fJoVKmrZXCp3erJFKjY-lS9vv1A&oe=68F83EFF" 
+                 alt="صورة تعريفية عن المتجر"
+                 onerror="this.src='https://via.placeholder.com/400x200/764ba2/white?text=Store+Hero'">
+        </div>
+
+        <div class="content">
+            <p class="welcome-text">
+                مرحباً بكم في متجرنا! تابعونا على منصات التواصل الاجتماعي لمعرفة آخر العروض والأخبار.
+            </p>
+
+            <div class="social-links">
+                <a href="رابط-الفيسبوك-هنا" class="social-btn facebook">
+                    <span class="social-icons">📘</span>
+                    تابعنا على فيسبوك
+                </a>
+                
+                <a href="رابط-الإنستقرام-هنا" class="social-btn instagram">
+                    <span class="social-icons">📷</span>
+                    تابعنا على إنستقرام
+                </a>
+            </div>
+
+            <div class="contact-info">
+                <p>📧 info@yourstore.com</p>
+                <p>📞 +1234567890</p>
+                <p>🕒 ساعات العمل: 9 ص - 6 م</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>جميع الحقوق محفوظة © 2024 متجرك</p>
+        </div>
+    </div>
+</body>
+</html>
