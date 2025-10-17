@@ -274,6 +274,19 @@
             width: 30px;
         }
 
+        /* الحل لمشكلة الأرقام المعكوسة */
+        .phone-number {
+            direction: ltr;
+            unicode-bidi: bidi-override;
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .working-hours {
+            direction: rtl;
+        }
+
         .footer {
             background: var(--dark);
             color: var(--light);
@@ -455,11 +468,12 @@
                 </h3>
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
-                    <span>+967 780 415 440</span>
+                    <!-- الحل: استخدام class خاص للرقم -->
+                    <span class="phone-number">+967 780 415 440</span>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-clock"></i>
-                    <span>ساعات العمل: 9 صباحاً - 6 مساءً</span>
+                    <span class="working-hours">ساعات العمل: 9 صباحاً - 6 مساءً</span>
                 </div>
             </div>
         </div>
