@@ -75,7 +75,7 @@
             justify-content: center;
             padding: 15px;
             line-height: 1.6;
-            font-size: 14px; /* حجم الخط الأساسي أصغر */
+            font-size: 14px;
         }
 
         /* زر تبديل الثيم */
@@ -103,7 +103,7 @@
         }
 
         .theme-toggle i {
-            font-size: 1.1rem; /* أصغر */
+            font-size: 1.1rem;
             color: var(--gold);
         }
 
@@ -191,8 +191,8 @@
         }
 
         .logo-large {
-            width: 140px; /* أصغر */
-            height: 140px; /* أصغر */
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             border: 3px solid rgba(255, 255, 255, 0.9);
             margin: 0 auto;
@@ -238,7 +238,7 @@
 
         .brand-main {
             font-family: 'El Messiri', serif;
-            font-size: 2.5rem; /* أصغر */
+            font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 10px;
             background: linear-gradient(135deg, #FFD700, #FFEC8B);
@@ -250,7 +250,7 @@
         }
 
         .brand-sub {
-            font-size: 1.4rem; /* أصغر */
+            font-size: 1.4rem;
             font-weight: 300;
             margin-bottom: 25px;
             opacity: 0.95;
@@ -259,7 +259,7 @@
         }
 
         .brand-tagline {
-            font-size: 1rem; /* أصغر */
+            font-size: 1rem;
             line-height: 1.6;
             opacity: 0.9;
             max-width: 400px;
@@ -319,7 +319,7 @@
 
         .welcome-title {
             font-family: 'El Messiri', serif;
-            font-size: 1.8rem; /* أصغر */
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 20px;
@@ -341,7 +341,7 @@
         }
 
         .description {
-            font-size: 1rem; /* أصغر */
+            font-size: 1rem;
             color: var(--text);
             margin-bottom: 20px;
             line-height: 1.7;
@@ -352,7 +352,7 @@
         .highlight {
             color: var(--primary);
             font-weight: 600;
-            font-size: 1.1rem; /* أصغر */
+            font-size: 1.1rem;
             display: block;
             margin-top: 20px;
             padding: 15px;
@@ -382,7 +382,7 @@
             text-decoration: none;
             color: white;
             font-weight: 600;
-            font-size: 0.95rem; /* أصغر */
+            font-size: 0.95rem;
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             box-shadow: 
                 0 6px 20px rgba(0, 0, 0, 0.12),
@@ -420,7 +420,7 @@
 
         .social-btn i {
             margin-left: 10px;
-            font-size: 1.3rem; /* أصغر */
+            font-size: 1.3rem;
         }
 
         .facebook {
@@ -452,7 +452,7 @@
 
         .contact-title {
             font-family: 'El Messiri', serif;
-            font-size: 1.3rem; /* أصغر */
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 20px;
@@ -468,18 +468,69 @@
             justify-content: center;
             gap: 15px;
             margin: 15px 0;
-            font-size: 1rem; /* أصغر */
+            font-size: 1rem;
             color: var(--text);
         }
 
         .contact-item i {
             color: var(--gold);
-            font-size: 1.1rem; /* أصغر */
+            font-size: 1.1rem;
             width: 25px;
             text-align: center;
         }
 
-        /* الحل لمشكلة الأرقام المعكوسة */
+        /* تصميم جديد لأيقونات الاتصال */
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-decoration: none;
+            color: white;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: 2px solid transparent;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .phone-btn {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+        }
+
+        .phone-btn:hover {
+            border-color: #25D366;
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+        }
+
+        .whatsapp-btn:hover {
+            border-color: #25D366;
+        }
+
+        .phone-number-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
         .phone-number {
             direction: ltr;
             unicode-bidi: bidi-override;
@@ -487,10 +538,17 @@
             font-weight: 600;
             letter-spacing: 1px;
             background: rgba(139, 115, 85, 0.1);
-            padding: 6px 12px;
-            border-radius: 8px;
+            padding: 8px 15px;
+            border-radius: 10px;
             border: 1px solid var(--border);
-            font-size: 0.95rem; /* أصغر */
+            font-size: 1rem;
+        }
+
+        .contact-label {
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.8;
+            margin-bottom: 5px;
         }
 
         .working-hours {
@@ -501,7 +559,7 @@
             background: var(--dark);
             color: var(--light);
             padding: 20px;
-            font-size: 0.9rem; /* أصغر */
+            font-size: 0.9rem;
             border-top: 2px solid var(--gold);
             grid-column: 1 / -1;
             text-align: center;
@@ -537,11 +595,11 @@
             }
         }
 
-        /* تصميم متجاوب للهواتف - تحسينات إضافية */
+        /* تصميم متجاوب للهواتف */
         @media (max-width: 768px) {
             body {
                 padding: 10px;
-                font-size: 13px; /* أصغر للهواتف */
+                font-size: 13px;
             }
             
             .container {
@@ -640,20 +698,19 @@
                 margin-bottom: 15px;
             }
             
-            .contact-item {
-                font-size: 0.95rem;
-                margin: 12px 0;
+            .contact-buttons {
                 gap: 12px;
             }
             
-            .contact-item i {
-                font-size: 1rem;
-                width: 20px;
+            .contact-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
             }
             
             .phone-number {
                 font-size: 0.9rem;
-                padding: 5px 10px;
+                padding: 6px 12px;
             }
             
             .footer {
@@ -691,27 +748,11 @@
                 padding: 14px 10px;
                 font-size: 0.85rem;
             }
-        }
-
-        @media (max-width: 360px) {
-            body {
-                font-size: 12px;
-            }
             
-            .brand-main {
-                font-size: 1.4rem;
-            }
-            
-            .brand-sub {
-                font-size: 1rem;
-            }
-            
-            .welcome-title {
-                font-size: 1.2rem;
-            }
-            
-            .description, .highlight {
-                font-size: 0.85rem;
+            .contact-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
             }
         }
 
@@ -760,20 +801,6 @@
                 transform: translateX(0) rotate(0); 
             }
         }
-
-        /* تحسينات للثيم المظلم */
-        [data-theme="dark"] .container {
-            box-shadow: 
-                0 20px 50px rgba(0, 0, 0, 0.35),
-                0 8px 25px rgba(0, 0, 0, 0.25);
-        }
-
-        [data-theme="dark"] .welcome-section,
-        [data-theme="dark"] .contact-info {
-            box-shadow: 
-                0 8px 25px rgba(0, 0, 0, 0.25),
-                inset 0 1px 0 rgba(255, 255, 255, 0.05);
-        }
     </style>
 </head>
 <body>
@@ -816,12 +843,18 @@
             </div>
 
             <div class="social-links">
-                <a href="https://www.facebook.com/profile.php?id=61566892313372" class="social-btn facebook" target="_blank">
+                <a href="https://www.facebook.com/profile.php?id=61566892313372" 
+                   class="social-btn facebook" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
                     <i class="fab fa-facebook-f"></i>
                     تابعنا على فيسبوك
                 </a>
                 
-                <a href="https://www.instagram.com/ayah86123/" class="social-btn instagram" target="_blank">
+                <a href="https://www.instagram.com/ayah86123/" 
+                   class="social-btn instagram" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
                     <i class="fab fa-instagram"></i>
                     تابعنا على إنستقرام
                 </a>
@@ -832,13 +865,30 @@
                     <i class="fas fa-headset"></i>
                     معلومات التواصل
                 </h3>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
+                
+                <div class="phone-number-container">
+                    <div class="contact-label">رقم الهاتف:</div>
                     <span class="phone-number">+967 784-888-995</span>
+                    <div class="contact-buttons">
+                        <!-- زر الاتصال الهاتفي -->
+                        <a href="tel:+967784888995" class="contact-btn phone-btn" title="اتصال هاتفي">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                        
+                        <!-- زر الواتساب -->
+                        <a href="https://wa.me/967784888995" 
+                           class="contact-btn whatsapp-btn" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           title="مراسلة على الواتساب">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
                 </div>
+
                 <div class="contact-item">
                     <i class="fas fa-clock"></i>
-                    <span class="working-hours">ساعات العمل: 9 صباحاً - 6 مساءً</span>
+                    <span class="working-hours">ساعات العمل: 9 صباحاً - 8 مساءً</span>
                 </div>
             </div>
         </div>
@@ -883,7 +933,6 @@
             localStorage.setItem('theme', newTheme);
             updateThemeIcon();
             
-            // إضافة تأثير للزر
             themeToggle.style.transform = 'scale(0.9)';
             setTimeout(() => {
                 themeToggle.style.transform = 'scale(1)';
@@ -893,12 +942,32 @@
         // تهيئة الأيقونة
         updateThemeIcon();
 
-        // إضافة تأثيرات تفاعلية محسنة
+        // كشف نوع الجهاز وتعديل روابط الواتساب
+        function detectDeviceAndModifyLinks() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const whatsappBtn = document.querySelector('.whatsapp-btn');
+            
+            if (isMobile) {
+                // في الهواتف: استخدام رابط واتساب مباشر للتطبيق
+                whatsappBtn.href = "https://api.whatsapp.com/send?phone=967780415440";
+                whatsappBtn.setAttribute('target', '_blank');
+            } else {
+                // في الكمبيوتر: فتح ويب الواتساب
+                whatsappBtn.href = "https://web.whatsapp.com/send?phone=967780415440";
+                whatsappBtn.setAttribute('target', '_blank');
+            }
+        }
+
+        // إضافة تأثيرات تفاعلية
         document.addEventListener('DOMContentLoaded', function() {
             const socialBtns = document.querySelectorAll('.social-btn');
+            const contactBtns = document.querySelectorAll('.contact-btn');
             const heroImage = document.querySelector('.hero-image');
             
-            // تأثيرات الأزرار
+            // كشف الجهاز وتعديل الروابط
+            detectDeviceAndModifyLinks();
+            
+            // تأثيرات الأزرار الاجتماعية
             socialBtns.forEach(btn => {
                 btn.addEventListener('mouseenter', function() {
                     this.style.transform = 'translateY(-6px) scale(1.02)';
@@ -906,6 +975,24 @@
                 
                 btn.addEventListener('mouseleave', function() {
                     this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+            
+            // تأثيرات أزرار الاتصال
+            contactBtns.forEach(btn => {
+                btn.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px) scale(1.1)';
+                });
+                
+                btn.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+                
+                btn.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
                 });
             });
             
@@ -922,6 +1009,22 @@
                 });
             }
         });
+
+        // إضافة تحسين إضافي للواتساب على الهواتف
+        function optimizeWhatsAppForMobile() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const whatsappBtn = document.querySelector('.whatsapp-btn');
+            
+            if (isMobile) {
+                // إضافة رسالة افتراضية للواتساب
+                const message = "مرحباً، أريد الاستفسار عن فساتين الزفاف";
+                const encodedMessage = encodeURIComponent(message);
+                whatsappBtn.href = `https://api.whatsapp.com/send?phone=967780415440&text=${encodedMessage}`;
+            }
+        }
+
+        // استدعاء الدالة عند التحميل
+        window.addEventListener('load', optimizeWhatsAppForMobile);
     </script>
 </body>
 </html>
