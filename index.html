@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
 </head>
 <body>
     <!-- زر تبديل الثيم -->
@@ -106,133 +106,6 @@
         </div>
     </div>
 
-    <script>
-        // نظام الثيم المظلم/الفاتح
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = themeToggle.querySelector('i');
-        
-        // التحقق من تفضيلات النظام
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const savedTheme = localStorage.getItem('theme');
-        
-        // تعيين الثيم الافتراضي
-        if (savedTheme) {
-            document.documentElement.setAttribute('data-theme', savedTheme);
-        } else if (prefersDark) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-        }
-        
-        // تحديث الأيقونة
-        function updateThemeIcon() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            if (currentTheme === 'dark') {
-                themeIcon.className = 'fas fa-sun';
-            } else {
-                themeIcon.className = 'fas fa-moon';
-            }
-        }
-        
-        // التبديل بين الثيمات
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon();
-            
-            themeToggle.style.transform = 'scale(0.9)';
-            setTimeout(() => {
-                themeToggle.style.transform = 'scale(1)';
-            }, 150);
-        });
-        
-        // تهيئة الأيقونة
-        updateThemeIcon();
-
-        // كشف نوع الجهاز وتعديل روابط الواتساب
-        function detectDeviceAndModifyLinks() {
-            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            const whatsappBtn = document.querySelector('.whatsapp-btn');
-            
-            if (isMobile) {
-                // في الهواتف: استخدام رابط واتساب مباشر للتطبيق
-                whatsappBtn.href = "https://api.whatsapp.com/send?phone=967784888995";
-                whatsappBtn.setAttribute('target', '_blank');
-            } else {
-                // في الكمبيوتر: فتح ويب الواتساب
-                whatsappBtn.href = "https://web.whatsapp.com/send?phone=967784888995";
-                whatsappBtn.setAttribute('target', '_blank');
-            }
-        }
-
-        // إضافة تأثيرات تفاعلية
-        document.addEventListener('DOMContentLoaded', function() {
-            const socialBtns = document.querySelectorAll('.social-btn');
-            const contactBtns = document.querySelectorAll('.contact-btn');
-            const heroImage = document.querySelector('.hero-image');
-            
-            // كشف الجهاز وتعديل الروابط
-            detectDeviceAndModifyLinks();
-            
-            // تأثيرات الأزرار الاجتماعية
-            socialBtns.forEach(btn => {
-                btn.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-6px) scale(1.02)';
-                });
-                
-                btn.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                });
-            });
-            
-            // تأثيرات أزرار الاتصال
-            contactBtns.forEach(btn => {
-                btn.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-3px) scale(1.1)';
-                });
-                
-                btn.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                });
-                
-                btn.addEventListener('click', function() {
-                    this.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        this.style.transform = 'scale(1)';
-                    }, 150);
-                });
-            });
-            
-            // تأثير الصورة الرئيسية
-            if (heroImage) {
-                heroImage.addEventListener('mouseenter', function() {
-                    this.style.transform = 'scale(1.05)';
-                    this.style.filter = 'brightness(1.05)';
-                });
-                
-                heroImage.addEventListener('mouseleave', function() {
-                    this.style.transform = 'scale(1)';
-                    this.style.filter = 'brightness(0.9)';
-                });
-            }
-        });
-
-        // إضافة تحسين إضافي للواتساب على الهواتف
-        function optimizeWhatsAppForMobile() {
-            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            const whatsappBtn = document.querySelector('.whatsapp-btn');
-            
-            if (isMobile) {
-                // إضافة رسالة افتراضية للواتساب
-                const message = "مرحباً، أريد الاستفسار عن فساتين الزفاف";
-                const encodedMessage = encodeURIComponent(message);
-                whatsappBtn.href = `https://api.whatsapp.com/send?phone=967784888995&text=${encodedMessage}`;
-            }
-        }
-
-        // استدعاء الدالة عند التحميل
-        window.addEventListener('load', optimizeWhatsAppForMobile);
-    </script>
+    <script src="assets/js/scripts.min.js" defer></script>
 </body>
 </html>
